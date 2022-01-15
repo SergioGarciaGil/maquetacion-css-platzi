@@ -37,33 +37,40 @@ display=swap"
         --md: 16px;
         --lg: 18px;
       }
+
       body {
         margin: 0;
         font-family: "Quicksand", sans-serif;
       }
+
       .login {
         width: 100%;
         height: 100vh;
         display: grid;
         place-items: center;
       }
+
       .form-container {
         display: grid;
 
-        grid-template-rows:
-          auto 1fr
-          auto;
+        grid-template-rows: auto 1fr auto;
         width: 300px;
+        justify-items: center;
       }
+
       .logo {
         width: 150px;
         margin-bottom: 48px;
+        justify-self: center;
+        display: none;
+      }
 
-        position: relative;
-        left: 50px;
-      }
       .title {
+        font-size: var(--lg);
+        margin-bottom: 12px;
+        text-align: center;
       }
+
       .subtitle {
         color: var(--very-light-pink);
         font-size: var(--md);
@@ -73,10 +80,35 @@ display=swap"
         text-align: center;
       }
 
+      .email-image {
+        width: 132px;
+        height: 132px;
+        border-radius: 50%;
+        background-color: var(--text-input-field);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 24px;
+      }
+      .email-image img {
+        width: 80px;
+      }
+      .resend {
+        font-size: var(--sm);
+      }
+      .resend span {
+        color: var(--very-light-pink);
+      }
+      .resend a {
+        color: var(--hospital-green);
+        text-decoration: none;
+      }
+
       .form {
         display: flex;
         flex-direction: column;
       }
+
       .primary-button {
         background-color: var(--hospital-green);
         border-radius: 8px;
@@ -88,10 +120,12 @@ display=swap"
         font-weight: bold;
         height: 50px;
       }
+
       .login-button {
         margin-top: 14px;
         margin-bottom: 30px;
       }
+
       @media (max-width: 640px) {
         .logo {
           display: block;
@@ -99,23 +133,31 @@ display=swap"
       }
     </style>
   </head>
+
   <body>
     <div class="login">
-      <div clas="form-container">
+      <div class="form-container">
         <img
-          src="./logos/logos/logo_yard_sale.
-svg"
+          src="./logos/logos/logo_yard_sale.svg"
+          alt="logo"
+          class="logo"
           alt="logo"
           class="logo"
         />
 
-        <h1 class="title">Create a new password</h1>
-        <p class="subtitle">Enter a new password for your account</p>
-      </div class="imail-image">
-      <img src="./icons/icons/email.svg" alt="email">
-      <div>
-
+        <h1 class="title">Email has been sent</h1>
+        <p class="subtitle">
+          Please check your inbox for instructions on how to reset the password
+        </p>
+        <div class="email-image">
+          <img src="./icons/icons/email.svg" alt="email" />
+        </div>
+        <button class="primary-button login-button">Login</button>
+        <p class="resend">
+          <span> Didn't recive the email!? </span><a href="/">Resend</a>
+        </p>
       </div>
     </div>
   </body>
+  z
 </html>
